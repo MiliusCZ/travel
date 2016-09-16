@@ -1,0 +1,41 @@
+.navbar-brand {
+    float: none;
+    padding: 0;
+}
+
+.navbar-right {
+    margin-top: 25px;
+}
+
+.jumbotron, .container .jumbotron {
+    font-size: $font-regular-size;
+    border-radius: 0;
+    padding: 30px;
+    background-color: transparent;
+    margin-bottom: 0;
+
+    p {
+        font-size: $font-regular-size;
+    }
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+.btn-primary {
+    border-color: darken($color-brand-primary-alternative, 5%);
+    background-color: $color-brand-primary-alternative;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-success:active:focus, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background-color: darken($color-brand-primary-alternative, 9%) !important;
+    border-color: darken($color-brand-primary-alternative, 11%) !important;
+}
+ 
+.btn-primary:active, .btn-primary.active, .btn-success:active:focus {
+    box-shadow: none;
+}

@@ -1,0 +1,39 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./base.scss";
+
+@import "./bootstrap.mods.scss";
+
+body {
+    background-color: $color-highlight;
+}
+.page-content {
+    display: block;
+    justify-content: center;
+    background-color: white;
+}
+
+.panel-body  img {
+    width: 100%;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.content.gray {
+    border-top: 1px solid #e7e7e7;
+    background-color: #eeeeee;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.infobox {
+    margin-bottom: 30px;
+}
+
+

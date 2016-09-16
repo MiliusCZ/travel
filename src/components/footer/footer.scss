@@ -1,0 +1,33 @@
+@import "../../assets/styles/colors.scss";
+
+footer {
+    position: absolute;
+    width: 100%;
+    min-height: 210px;
+
+    padding: 15px 0;
+    background-color: $color-highlight;
+    color: white;
+    box-shadow: 0px 0px 40px -5px rgba(0,0,0,0.5);
+
+    a, a:hover, a:visited, a:active, a:link, a:focus, a:active:focus {
+        color: darken($color-brand-primary, 5%);
+    }
+
+    hr {
+        margin-bottom: 0;
+        margin-top: 15px;
+        color: darken($color-highlight, 5%);
+        border-color: darken($color-highlight, 5%);
+    }
+
+    .dimmedColor {
+        color: darken($color-highlight, 5%);
+    }
+}
+
+@media (max-width: 768px) {
+     .footerItem {
+         margin-top: 15px;
+     }
+}
