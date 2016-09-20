@@ -2,9 +2,12 @@ import React from 'react';
 import './header.scss';
 
 export const Header = () => (
-  <header>
-    header
-  </header>
+  <div className='container'>
+    <div className='row'>
+      <div className='header'>
+      </div>
+    </div>
+  </div>
 );
 
 Header.propTypes = {

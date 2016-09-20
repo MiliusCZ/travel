@@ -1,5 +1,9 @@
 import React from 'react';
 
 export const Home = () => (
-  <p>Home content</p>
+  <div className='container'>
+    <div className='row'>
+      <p>Home content</p>
+    </div>
+  </div>
 );

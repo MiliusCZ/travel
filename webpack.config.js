@@ -34,7 +34,7 @@ module.exports = {
       { test: /\.less$/, loader: `${stylesheetsLoader}!less` },
       { test: /\.html$/, loader: 'html-loader' },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png|gif)$/,
         loader: 'url-loader?limit=25000&name=images/[name].[ext]'
       },
       {

@@ -11,6 +11,16 @@ import createSagaMiddleware from 'redux-saga';
 
 const reducer = combineReducers({ ...reducers, routing: routerReducer });
 
+const config = {
+  apiKey: 'AIzaSyDRUuywerDx07CpzPpNsfKMNuXHTw2yitE',
+  authDomain: 'milos-turek-travel.firebaseapp.com',
+  databaseURL: 'https://milos-turek-travel.firebaseio.com',
+  storageBucket: '',
+  messagingSenderId: '72690935780'
+};
+
+firebase.initializeApp(config);
+
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = compose(
@@ -22,14 +32,5 @@ export const history = syncHistoryWithStore(browserHistory, store);
 
 sagaMiddleware.run(sagas);
 
-const config = {
-  apiKey: 'AIzaSyDRUuywerDx07CpzPpNsfKMNuXHTw2yitE',
-  authDomain: 'milos-turek-travel.firebaseapp.com',
-  databaseURL: 'https://milos-turek-travel.firebaseio.com',
-  storageBucket: '',
-  messagingSenderId: '72690935780'
-};
-
-firebase.initializeApp(config);
 
 export default store;

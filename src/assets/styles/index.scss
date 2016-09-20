@@ -7,33 +7,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import "./bootstrap.mods.scss";
 
+@import '~react-photoswipe/lib/photoswipe.css';
+
 body {
-    background-color: $color-highlight;
-}
-.page-content {
-    display: block;
-    justify-content: center;
-    background-color: white;
+    background-color: $color-background-grey;
 }
 
-.panel-body  img {
-    width: 100%;
+.withShadow {
+  box-shadow: 0 0 25px 5px #ddd;
 }
-
-.navbar {
-    margin-bottom: 0;
-}
-
-.content.gray {
-    border-top: 1px solid #e7e7e7;
-    background-color: #eeeeee;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 30px;
-}
-
-.infobox {
-    margin-bottom: 30px;
-}
-
-
