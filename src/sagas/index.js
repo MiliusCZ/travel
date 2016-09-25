@@ -9,5 +9,5 @@ export default function* sagas() {
     fork(appInit)
   ];
 
-  yield put({ type: APP_LOAD });
+  //yield put({ type: APP_LOAD });
 }
