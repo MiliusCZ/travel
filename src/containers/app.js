@@ -1,16 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import styles from './app.css';
-import { getUrl } from 'utils/map-utils'
+import { getUrl } from 'utils/map-utils';
 import { loadApp } from 'actions/app';
 
-import {
-  Header,
-  Footer,
-  TopImage,
-  TripMap,
-  Gallery
-} from 'components';
+import { Header, Footer } from 'components';
+import { Trip } from 'containers';
 
 import 'assets/images/cuba.jpg';
 import 'assets/images/cuba/cuba-1.jpg';
@@ -41,7 +36,8 @@ export class App extends Component {
     dispatch: PropTypes.func,
     loaded: PropTypes.bool,
     data: PropTypes.object,
-    children: PropTypes.object
+    children: PropTypes.object,
+    params: PropTypes.object
   };
 
   componentDidMount() {
@@ -52,7 +48,7 @@ export class App extends Component {
     if (!this.props.data.trips) {
       return (
         <div>no data available</div>
-      )
+      );
     }
 
     const trip = this.props.data.trips[this.props.params.tripId];
@@ -68,11 +64,9 @@ export class App extends Component {
     return (
       <div className={styles.container}>
         <div className="container withShadow" style={{ padding: '0' }}>
-          <div class="row">
+          <div className="row">
             <Header />
-            <TopImage data={topImageData} />
-            <TripMap data={mapData} />
-            <Gallery data={trip.photos} />
+            <Trip topImageData={topImageData} mapData={mapData} photos={trip.photos} />
             <Footer />
           </div>
         </div>
