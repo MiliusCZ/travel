@@ -5,3 +5,5 @@ export { TripMap } from './map/map';
 export { FakeComponent } from './fake-component/fake-component';
 export { TopImage } from './top-image/top-image';
 export { Gallery } from './gallery/gallery';
+export { TripSelector } from './trip-selector/trip-selector';
+

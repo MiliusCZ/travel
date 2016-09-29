@@ -5,7 +5,6 @@ import { getUrl } from 'utils/map-utils';
 import { loadApp } from 'actions/app';
 
 import { Header, Footer } from 'components';
-import { Trip } from 'containers';
 
 import 'assets/images/cuba.jpg';
 import 'assets/images/cuba/cuba-1.jpg';
@@ -35,9 +34,7 @@ export class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
     loaded: PropTypes.bool,
-    data: PropTypes.object,
     children: PropTypes.object,
-    params: PropTypes.object
   };
 
   componentDidMount() {
@@ -45,28 +42,28 @@ export class App extends Component {
   }
 
   render() {
-    if (!this.props.data.trips) {
-      return (
-        <div>no data available</div>
-      );
-    }
+    // if (!this.props.data.trips) {
+    //   return (
+    //     <div>no data available</div>
+    //   );
+    // }
 
-    const trip = this.props.data.trips[this.props.params.tripId];
+    // const trip = this.props.data.trips[this.props.params.tripId];
 
-    const topImageData = {
-      image: trip.topImage,
-      heading: `${trip.title} ${trip.year}`
-    };
+    // const topImageData = {
+    //   image: trip.topImage,
+    //   heading: `${trip.title} ${trip.year}`
+    // };
 
-    const mapData = {
-      url: getUrl(trip.places)
-    };
+    // const mapData = {
+    //   url: getUrl(trip.places)
+    // };
     return (
       <div className={styles.container}>
         <div className="container withShadow" style={{ padding: '0' }}>
           <div className="row">
             <Header />
-            <Trip topImageData={topImageData} mapData={mapData} photos={trip.photos} />
+            {this.props.children}
             <Footer />
           </div>
         </div>
@@ -77,8 +74,7 @@ export class App extends Component {
 
 function mapStateToProperties(state) {
   return {
-    loaded: state.app.loaded,
-    data: state.app.data
+    loaded: state.app.loaded
   };
 }
 

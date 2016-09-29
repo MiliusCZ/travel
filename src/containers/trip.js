@@ -1,18 +1,35 @@
 import React, { PropTypes } from 'react';
 import { TopImage, TripMap, Gallery } from 'components';
+import { connect } from 'react-redux';
 
-export const Trip = (topImageData, mapData, photos) => (
-  <div>
-    <TopImage data={topImageData} />
-    <TripMap data={mapData} />
-    <Gallery data={photos} />
-  </div>
-);
+export const Trip = (data, props) => {
+  const trip = data.trips[props.params.tripId];
 
-Trip.propTypes = {
-  topImageData: PropTypes.object,
-  mapData: PropTypes.array,
-  photos: PropTypes.array
+  const topImageData = {
+    image: trip.topImage,
+    heading: `${trip.title} ${trip.year}`
+  };
+
+  const mapData = {
+    url: getUrl(trip.places)
+  };
+
+  return (
+    <div>
+      <TopImage data={topImageData} />
+      <TripMap data={mapData} />
+      <Gallery data={photos} />
+    </div>
+  )
 };
 
-export default Trip;
+Trip.propTypes = {
+  data: PropTypes.array,
+  props: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+  data: state.app.data
+});
+
+export default connect(mapStateToProps)(Trip);
