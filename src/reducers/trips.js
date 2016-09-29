@@ -2,7 +2,7 @@ import { APP_LOAD, APP_INIT_SUCCESS } from 'constants/action-types';
 
 const initialState = {
   loaded: false,
-  trips: []
+  data: []
 };
 
 export default function app(state = initialState, action) {
@@ -10,8 +10,8 @@ export default function app(state = initialState, action) {
     case APP_LOAD:
       return { ...state, loaded: true };
     case APP_INIT_SUCCESS: {
-      const trips = action.result.trips;
-      return { ...state, loaded: true, trips };
+      const data = action.result.trips;
+      return { ...state, loaded: true, data };
     }
     default:
       return state;
