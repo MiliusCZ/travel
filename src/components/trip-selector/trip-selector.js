@@ -1,22 +1,19 @@
 import React, { PropTypes } from 'react';
 
 export const TripSelector = (trips) => {
-  if (!trips)
-    return (<div></div>);
-
-  const tripsSelector = trips.map((trip, index) => (
-    <div>
-      <h2>{trip.heading}</h2>
+  const tripsSelector = trips.trips.trips.map((trip, index) => (
+    <div key={index}>
+      <h2>{trip.title}</h2>
     </div>
   ));
 
   return (
     <div className="container">
       <div className="row">
-        {tripSelector}
+        {tripsSelector}
       </div>
     </div>
-  )
+  );
 };
 
 TripSelector.propTypes = {

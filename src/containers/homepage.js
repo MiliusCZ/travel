@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { TripSelector } from 'components';
 import { connect } from 'react-redux';
-/*
+
 export const Homepage = (trips) => (
   <div>
     <TripSelector trips={trips} />
@@ -13,12 +13,12 @@ Homepage.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  trips: state.app.trips
+  trips: state.trips.trips
 });
 
 export default connect(mapStateToProps)(Homepage);
-*/
 
+/*
 export class Homepage extends Component {
   static propTypes = {
     data: PropTypes.object
@@ -37,9 +37,9 @@ export class Homepage extends Component {
 
 function mapStateToProperties(state) {
   return {
-    data: state.app.data 
+    data: state.trips.trips
   };
 }
 
-export default connect(mapStateToProperties)(Homepage);
+export default connect(mapStateToProperties)(Homepage);*/
 
