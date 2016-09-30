@@ -14,6 +14,7 @@ module.exports = {
   entry: './index',
   output: {
     filename: '[hash].js',
+    publicPath: '/'
   },
   devtool: 'source-map',
   debug: true,

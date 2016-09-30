@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { TripSelector } from 'components';
 import { connect } from 'react-redux';
 
-export const Homepage = (trips) => (
+export const Homepage = ({ trips }) => (
   <div>
     <TripSelector trips={trips} />
   </div>
