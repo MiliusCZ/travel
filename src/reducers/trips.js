@@ -10,7 +10,7 @@ export default function app(state = initialState, action) {
     case APP_LOAD:
       return { ...state, loaded: true };
     case APP_INIT_SUCCESS: {
-      const data = action.result.trips;
+      const data = action.result.trips.sort((item1, item2) => item1.year < item2.year);
       return { ...state, loaded: true, data };
     }
     default:

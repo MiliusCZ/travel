@@ -15,7 +15,7 @@ const config = {
   apiKey: 'AIzaSyDRUuywerDx07CpzPpNsfKMNuXHTw2yitE',
   authDomain: 'milos-turek-travel.firebaseapp.com',
   databaseURL: 'https://milos-turek-travel.firebaseio.com',
-  storageBucket: '',
+  storageBucket: 'milos-turek-travel.appspot.com',
   messagingSenderId: '72690935780'
 };
 
@@ -31,6 +31,5 @@ export const store = compose(
 export const history = syncHistoryWithStore(browserHistory, store);
 
 sagaMiddleware.run(sagas);
-
 
 export default store;

@@ -7,7 +7,7 @@ const SelectorItem = (item) => (
     <div className="imgContainer text-center selectorItem">
       <h3>{`${item.title} ${item.year}`}</h3>
       <Link to={`/trip/${item.id}`}><img src={item.topImage} alt="item" /></Link>
-      <div className="description">{`${item.photos.length} photos`}</div>
+      <div className="description">{`${item.photos ? item.photos.length : 0} photos`}</div>
     </div>
   </div>
 );
